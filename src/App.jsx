@@ -2,11 +2,15 @@ import { useState, React } from 'react';
 import axios from 'axios';
 import './index.css';
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 const App = () => {
   const [data,setData] = useState({})
   const [location,setLocation] = useState('')
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=ddba5140130c84af0c5989be9b3109bf`
+
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${apiKey}`
 
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
